@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Module>
+    <ModulePrefs title="Toaster Notification Gadget"
+        description="Toaster Notification"
+        thumbnail="http://localhost:8082/">
+
+        <Require feature="settitle" />
+        <Require feature="dynamic-height" />
+        <Require feature="pubsub-2" />
+        <Require feature="setprefs" />
+        <Require feature="loadingindicator">
+            <Param name="manual-dismiss">false</Param>
+            <Param name="loading-timeout">10</Param>
+        </Require>
+    </ModulePrefs>
+
+    <Content type="html">
+        <![CDATA[
+            <!DOCTYPE html>
+            <!-- Styling -->
+            <link rel="stylesheet" href="ToasterNotification.css" type="text/css" />
+            
+            <!-- jQuery -->
+            <script type="text/javascript" src="/desktop/assets/js/jquery.min.js"></script>
+           
+            <!-- Finesse Library -->
+            <script type="text/javascript" src="/desktop/assets/js/finesse.js"></script>
+
+            <!-- Gadget Business Logic -->
+            <script type="text/javascript" src="ToasterNotification.js"></script>
+
+            <body class="claro">
+                <!-- Sample Gadget -->
+                <div>
+                    <fieldset id="userfieldset" class="outline">
+                        <legend>User</legend>
+                        <div><b> User ID: </b><span id="userId"></span></div>
+                        <div><b> First Name: </b><span id="firstName"></div>
+                        <div><b> Last Name: </b><span id="lastName"></div>
+                        <div><b> Role: </b><span id="userRole"></div>
+                        <div><b> Extension: </b><span id="extension"></div>
+                        <div><b> Current User State: </b><span id="userState"></div>
+                        <br>
+                        <div id="goReady">
+                            <button onClick="finesse.modules.ToasterNotificationGadget.setUserState('READY');">Change state to READY</button>
+                        </div>
+                        <div id="goNotReady">
+                            <button onClick="finesse.modules.ToasterNotificationGadget.setUserState('NOT_READY');">Change state to NOT READY</button>
+                        </div>
+                        <br>
+
+                    </fieldset>
+
+            </body>
+
+            <script type="text/javascript">
+                gadgets.HubSettings.onConnect = function () {
+                    finesse.modules.ToasterNotificationGadget.init();
+                    $("#bing").attr("src","https://www.bing.com");
+                };
+            </script>
+        ]]>
+    </Content>
+</Module>
