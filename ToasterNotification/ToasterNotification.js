@@ -41,9 +41,12 @@ finesse.modules.ToasterNotificationGadget = (function ($) {
         if (theCurrentState === states.NOT_READY) {
             clientLogs.log("========== ATTEMPTING TOASTER ==========");
             var theNotReadyReasonCode = user.getNotReadyReasonCodeId();
-            var theToasterText='';
+            var theToasterText='Your are in a NOT READY STATE!!!';
             if (theNotReadyReasonCode=='35') theToasterText='Your Extension is out of service';
             if (theNotReadyReasonCode=='38') theToasterText='Your Extension is back in service';
+            if (theNotReadyReasonCode=='9') theToasterText='Your Extension is out of service: RC32759';
+            if (theNotReadyReasonCode=='11') theToasterText='Your Extension is out of service due to CUCM Failover : RC32757';
+            if (theNotReadyReasonCode=='12') theToasterText='Your Extension is back in service. Please Go Ready : RC32756';
             if (theToasterText!='') {
                 finesse.containerservices.FinesseToaster.showToaster(
                     'Agent Phone Status Alert', {
@@ -69,7 +72,18 @@ finesse.modules.ToasterNotificationGadget = (function ($) {
 
             // Initiate the ClientServices and load the user object. ClientServices are
             // initialized with a reference to the current configuration.
-            finesse.clientservices.ClientServices.init(cfg, false);
+            _cs=finesse.clientservices.ClientServices;
+            _cs.init(cfg, false);
+
+            _cs.registerOnDisconnectHandler( function() {
+                            finesse.containerservices.FinesseToaster.showToaster(
+                                'Finesse Status Alert', {
+                                    body: 'Finesse server has disconnected',
+                                    showWhenVisible: true
+                                });
+                });
+
+
 
             // Initiate the ClientLogs. The gadget id will be logged as a part of the message
             clientLogs.init(gadgets.Hub, "ToasterNotificationGadget");

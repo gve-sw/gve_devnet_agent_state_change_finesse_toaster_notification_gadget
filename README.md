@@ -192,7 +192,35 @@ This will pop up even if the browser with the Finesse desktop is minimized or ot
 Once the Jabber client on the VM is re-launched or otherwise goes back in service, you will see another toaster 
 notification:
 
-![IMAGES/BackInServiceHiddenDesktop.png](IMAGES/BackInServiceHiddenDesktop.png)
+![IMAGES/BackInServiceHiddenDesktop.png](IMAGES/BackInServiceHiddenDesktop.png)   
+
+You can also test the the "Finesse server has disconnected" notification by restarting the Finesse Tomcat server as explained above.  
+
+
+### Managing reason codes
+
+This sample code only sends a notification when the agent transitions to a Not Ready state or communications to the Finesse Server is lost.
+The following reason codes are also detected and included in the notification text: 
+id 35: Phone Failure
+id 38: Phone Working
+id 9: Phone Failure
+id 11: CUCM Failover
+id 12: Phone Working
+
+Code IDs 35 and 38 are configured with those reason codes in the Cisco DevNet UCCX 12.5 Sandbox and they may to Reason Codes 32759 and 32756 respectively, but your setup might have different IDs for the various reason codes.
+If this sample code is not prividing the correct reason code text, access the following URL and log in with the Finnesse administrator credentials to check the mapping (for the 
+UCCX 12.5 DevNet Sandbox, the uccxPublisher hostname is hq-uccx.abc.inc:   
+https://{{uccxPublisher}}:8445/finesse/api/ReasonCodes?category=ALL   
+The [sample_NR_reasoncodes.xml](sample_NR_reasoncodes.xml) file in the respository shows you an example of the XML file that you get from accessing that URL, it was extracted 
+from the UCCX 12.5 DevNet Sandbox. You can see there the mapping of the IDs that you get from the `user.getNotReadyReasonCodeId()` call to the actual Reason Codes you can administer in the 
+Finesse Admin pages at https://hq-uccx.abc.inc:8445/cfadmin :  
+
+
+![IMAGES/ReasonCodesAdmin.png](IMAGES/ReasonCodesAdmin.png)
+
+ 
+
+
 
 # Screenshots
 

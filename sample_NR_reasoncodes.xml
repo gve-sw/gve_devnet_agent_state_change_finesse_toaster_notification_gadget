@@ -1,0 +1,238 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<ReasonCodes category="ALL">
+<ReasonCode>
+  <uri>/finesse/api/ReasonCode/27</uri>
+  <id>27</id>
+  <category>LOGOUT</category>
+  <code>32767</code>
+  <label>Device Conflict</label>
+  <forAll>true</forAll>
+  <systemCode>true</systemCode>
+</ReasonCode>
+<ReasonCode>
+  <uri>/finesse/api/ReasonCode/28</uri>
+  <id>28</id>
+  <category>LOGOUT</category>
+  <code>32766</code>
+  <label>Agent Initiated</label>
+  <forAll>true</forAll>
+  <systemCode>true</systemCode>
+</ReasonCode>
+<ReasonCode>
+  <uri>/finesse/api/ReasonCode/29</uri>
+  <id>29</id>
+  <category>LOGOUT</category>
+  <code>32765</code>
+  <label>System Disconnect</label>
+  <forAll>true</forAll>
+  <systemCode>true</systemCode>
+</ReasonCode>
+<ReasonCode>
+  <uri>/finesse/api/ReasonCode/30</uri>
+  <id>30</id>
+  <category>LOGOUT</category>
+  <code>32764</code>
+  <label>System Standby</label>
+  <forAll>true</forAll>
+  <systemCode>true</systemCode>
+</ReasonCode>
+<ReasonCode>
+  <uri>/finesse/api/ReasonCode/31</uri>
+  <id>31</id>
+  <category>NOT_READY</category>
+  <code>32763</code>
+  <label>Call Not Answered</label>
+  <forAll>true</forAll>
+  <systemCode>true</systemCode>
+</ReasonCode>
+<ReasonCode>
+  <uri>/finesse/api/ReasonCode/32</uri>
+  <id>32</id>
+  <category>NOT_READY</category>
+  <code>32762</code>
+  <label>Offhook</label>
+  <forAll>true</forAll>
+  <systemCode>true</systemCode>
+</ReasonCode>
+<ReasonCode>
+  <uri>/finesse/api/ReasonCode/33</uri>
+  <id>33</id>
+  <category>NOT_READY</category>
+  <code>32761</code>
+  <label>Non ACD Busy</label>
+  <forAll>true</forAll>
+  <systemCode>true</systemCode>
+</ReasonCode>
+<ReasonCode>
+  <uri>/finesse/api/ReasonCode/34</uri>
+  <id>34</id>
+  <category>NOT_READY</category>
+  <code>32760</code>
+  <label>Agent Logon</label>
+  <forAll>true</forAll>
+  <systemCode>true</systemCode>
+</ReasonCode>
+<ReasonCode>
+  <uri>/finesse/api/ReasonCode/35</uri>
+  <id>35</id>
+  <category>NOT_READY</category>
+  <code>32759</code>
+  <label>Phone Failure</label>
+  <forAll>true</forAll>
+  <systemCode>true</systemCode>
+</ReasonCode>
+<ReasonCode>
+  <uri>/finesse/api/ReasonCode/36</uri>
+  <id>36</id>
+  <category>NOT_READY</category>
+  <code>32758</code>
+  <label>Wrap Up Timer Expiry</label>
+  <forAll>true</forAll>
+  <systemCode>true</systemCode>
+</ReasonCode>
+<ReasonCode>
+  <uri>/finesse/api/ReasonCode/37</uri>
+  <id>37</id>
+  <category>NOT_READY</category>
+  <code>32757</code>
+  <label>CUCM Failover</label>
+  <forAll>true</forAll>
+  <systemCode>true</systemCode>
+</ReasonCode>
+<ReasonCode>
+  <uri>/finesse/api/ReasonCode/38</uri>
+  <id>38</id>
+  <category>NOT_READY</category>
+  <code>32756</code>
+  <label>Phone Working</label>
+  <forAll>true</forAll>
+  <systemCode>true</systemCode>
+</ReasonCode>
+<ReasonCode>
+  <uri>/finesse/api/ReasonCode/39</uri>
+  <id>39</id>
+  <category>NOT_READY</category>
+  <code>32755</code>
+  <label>Call Ended</label>
+  <forAll>true</forAll>
+  <systemCode>true</systemCode>
+</ReasonCode>
+<ReasonCode>
+  <uri>/finesse/api/ReasonCode/40</uri>
+  <id>40</id>
+  <category>NOT_READY</category>
+  <code>32754</code>
+  <label>Restricted Device</label>
+  <forAll>true</forAll>
+  <systemCode>true</systemCode>
+</ReasonCode>
+<ReasonCode>
+  <uri>/finesse/api/ReasonCode/41</uri>
+  <id>41</id>
+  <category>NOT_READY</category>
+  <code>32753</code>
+  <label>Restricted Line</label>
+  <forAll>true</forAll>
+  <systemCode>true</systemCode>
+</ReasonCode>
+<ReasonCode>
+  <uri>/finesse/api/ReasonCode/42</uri>
+  <id>42</id>
+  <category>NOT_READY</category>
+  <code>32752</code>
+  <label>Cancel Reservation Preview Call</label>
+  <forAll>true</forAll>
+  <systemCode>true</systemCode>
+</ReasonCode>
+<ReasonCode>
+  <uri>/finesse/api/ReasonCode/43</uri>
+  <id>43</id>
+  <category>NOT_READY</category>
+  <code>32751</code>
+  <label>Skip Preview Call</label>
+  <forAll>true</forAll>
+  <systemCode>true</systemCode>
+</ReasonCode>
+<ReasonCode>
+  <uri>/finesse/api/ReasonCode/44</uri>
+  <id>44</id>
+  <category>NOT_READY</category>
+  <code>32750</code>
+  <label>Extension Modified</label>
+  <forAll>true</forAll>
+  <systemCode>true</systemCode>
+</ReasonCode>
+<ReasonCode>
+  <uri>/finesse/api/ReasonCode/45</uri>
+  <id>45</id>
+  <category>NOT_READY</category>
+  <code>32749</code>
+  <label>Call Cancel</label>
+  <forAll>true</forAll>
+  <systemCode>true</systemCode>
+</ReasonCode>
+<ReasonCode>
+  <uri>/finesse/api/ReasonCode/46</uri>
+  <id>46</id>
+  <category>LOGOUT</category>
+  <code>32748</code>
+  <label>Agent Deleted</label>
+  <forAll>true</forAll>
+  <systemCode>true</systemCode>
+</ReasonCode>
+<ReasonCode>
+  <uri>/finesse/api/ReasonCode/47</uri>
+  <id>47</id>
+  <category>NOT_READY</category>
+  <code>32742</code>
+  <label>Non ACD Offhook</label>
+  <forAll>true</forAll>
+  <systemCode>true</systemCode>
+</ReasonCode>
+<ReasonCode>
+  <uri>/finesse/api/ReasonCode/48</uri>
+  <id>48</id>
+  <category>LOGOUT</category>
+  <code>32741</code>
+  <label>Extension Conflict</label>
+  <forAll>true</forAll>
+  <systemCode>true</systemCode>
+</ReasonCode>
+<ReasonCode>
+  <uri>/finesse/api/ReasonCode/49</uri>
+  <id>49</id>
+  <category>LOGOUT</category>
+  <code>32740</code>
+  <label>System Initiated Relogin</label>
+  <forAll>true</forAll>
+  <systemCode>true</systemCode>
+</ReasonCode>
+<ReasonCode>
+  <uri>/finesse/api/ReasonCode/50</uri>
+  <id>50</id>
+  <category>LOGOUT</category>
+  <code>255</code>
+  <label>Connection Failure</label>
+  <forAll>true</forAll>
+  <systemCode>true</systemCode>
+</ReasonCode>
+<ReasonCode>
+  <uri>/finesse/api/ReasonCode/51</uri>
+  <id>51</id>
+  <category>NOT_READY</category>
+  <code>33</code>
+  <label>Supervisor Initiated</label>
+  <forAll>true</forAll>
+  <systemCode>true</systemCode>
+</ReasonCode>
+<ReasonCode>
+  <uri>/finesse/api/ReasonCode/26</uri>
+  <id>26</id>
+  <category>LOGOUT</category>
+  <code>22</code>
+  <label>Supervisor Initiated</label>
+  <forAll>true</forAll>
+  <systemCode>true</systemCode>
+</ReasonCode>
+</ReasonCodes>
+
