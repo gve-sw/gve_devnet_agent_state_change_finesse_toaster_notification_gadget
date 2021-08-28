@@ -16,6 +16,8 @@ or implied.
 
 */
 
+const TOASTER_AUTOCLOSE_TIMER=20000 // this how long to show the toaster notification , in milliseconds
+
 var finesse = finesse || {};
 finesse.gadget = finesse.gadget || {};
 finesse.container = finesse.container || {};
@@ -36,27 +38,29 @@ finesse.modules.ToasterNotificationGadget = (function ($) {
     /**
      *  Handler for all User updates
      */
-    handleUserChange = function(userevent) {
+     handleUserChange = function(userevent) {
         var theCurrentState = user.getState();
         if (theCurrentState === states.NOT_READY) {
-            clientLogs.log("========== ATTEMPTING TOASTER ==========");
+            clientLogs.log("=====Gadget.Log -> Agent Not Ready ======");
             var theNotReadyReasonCode = user.getNotReadyReasonCodeId();
-            var theToasterText='Your are in a NOT READY STATE!!!';
-            if (theNotReadyReasonCode=='35') theToasterText='Your Extension is out of service';
-            if (theNotReadyReasonCode=='38') theToasterText='Your Extension is back in service';
-            if (theNotReadyReasonCode=='9') theToasterText='Your Extension is out of service: RC32759';
+            var theToasterText='';
+            if (theNotReadyReasonCode=='9' || theNotReadyReasonCode=='35') theToasterText='Your Extension is out of service : RC32759';
             if (theNotReadyReasonCode=='11') theToasterText='Your Extension is out of service due to CUCM Failover : RC32757';
-            if (theNotReadyReasonCode=='12') theToasterText='Your Extension is back in service. Please Go Ready : RC32756';
+            if (theNotReadyReasonCode=='12' || theNotReadyReasonCode=='38') theToasterText='Your Extension is back in service. Please Go Ready : RC32756';
             if (theToasterText!='') {
+                clientLogs.log("=====Gadget.Log -> Attempting Toaster Notification =====");
                 finesse.containerservices.FinesseToaster.showToaster(
                     'Agent Phone Status Alert', {
                         body: theToasterText,
+                        autoClose: TOASTER_AUTOCLOSE_TIMER,
                         showWhenVisible: true
                     }
                 );
             }
+            clientLogs.log("=====Gadget.Log -> Toaster Notification Not Required=====");
         }
-    };
+    }; 
+
 
     /** @scope finesse.modules.ToasterNotificationGadget */
     return {
@@ -78,12 +82,20 @@ finesse.modules.ToasterNotificationGadget = (function ($) {
             _cs.registerOnDisconnectHandler( function() {
                             finesse.containerservices.FinesseToaster.showToaster(
                                 'Finesse Status Alert', {
-                                    body: 'Finesse server has disconnected',
+                                    body: 'Lost Connection to Cisco Finesse Server',
+                                    autoClose: TOASTER_AUTOCLOSE_TIMER,
                                     showWhenVisible: true
                                 });
                 });
 
-
+            _cs.registerOnConnectHandler( function() {
+                            finesse.containerservices.FinesseToaster.showToaster(
+                                'Finesse Status Alert', {
+                                    body: 'Connected to Cisco Finesse Server',
+                                    autoClose: TOASTER_AUTOCLOSE_TIMER,
+                                    showWhenVisible: true
+                                });
+                });
 
             // Initiate the ClientLogs. The gadget id will be logged as a part of the message
             clientLogs.init(gadgets.Hub, "ToasterNotificationGadget");

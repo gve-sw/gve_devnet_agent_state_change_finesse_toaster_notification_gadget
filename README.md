@@ -32,22 +32,22 @@ Once you receive the email with the subject "Your Cisco DevNet Sandbox Lab is Re
 in the email body to VPN into it with a Cisco AnyConnect client. 
 
 ### Register the agent phones  
-Register the Agent Phones by launching Jabber in the Jabber 1 and Jabber 2 desktops from the topology map in the sandbox
-web page (URL is in your the email you received) 
+Register the Agent Phones by launching Jabber in the Jabber 2 desktop from the topology map in the sandbox
+web page (URL is in your the email you received). 
 
-To launch the desktops, just hover your mouse pointer over the rectangle with the Jabber logo for the Jabber 1 and Jabber 2 
-virtual machines and, from the button that pops up with an inverse triangle icon a pop-up menu shows where you can select 
+To launch the desktop, just hover your mouse pointer over the rectangle with the Jabber logo for the Jabber 2 
+virtual machine and, from the button that pops up with an inverse triangle icon a pop-up menu shows where you can select 
 the RDP menu entry. 
 
 ![IMAGES/CCXSandboxTopology.png](IMAGES/CCXSandboxTopology.png)
 
 This will open a new browser tab where you will see a Windows Server VM interface with a Cisco Jabber 
-Desktop shortcut which you can double click to start Jabber on that VM. Don't forget to do it on both the Jabber 1 and Jabber 2
-VMs.   
+Desktop shortcut which you can double click to start Jabber on that VM.  
 
 ![IMAGES/Jabber2Desktop.png](IMAGES/Jabber2Desktop.png)  
 
-
+NOTE: You can also just run a local Remote Desktop Client on your PC and use the IP address of the Jabber 2 VM (10.10.20.13) and the login credentials from the Admin tab in the sandbox 
+dashboard (Username: administrator , Password: ciscopsdt) to connect to it that way. 
 
 ### Enable the 3rdpartygadget account:
 
@@ -99,6 +99,12 @@ Cisco Finesse Tomcat[STARTED]
 admin:
 
 ```
+
+### Set the Toaster Notification auto close duration 
+In your local copy of the `ToasterNotification.js` inside the ToasterNotification folder you downloaded from this repository , change the `TOASTER_AUTOCLOSE_TIMER` constant to 
+whatever value you prefer. In the sample code it is set to 20,000 milliseconds (20 seconds). The default if you do not sepecify the `autoClose` parameter when calling `finesse.containerservices.FinesseToaster.showToaster()` is 
+8 seconds. There are 3 locations in the code that use that constant so if you prefer to have different close durations for the different type of Toaster 
+notifications (line issues, Finesse Out of Service and Finesse back in Service) you can just set them explicitely by replacing `TOASTER_AUTOCLOSE_TIMER`  with your prefered value.  
 
 ### Upload the ToasterNotification gadget
 
