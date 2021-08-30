@@ -102,7 +102,7 @@ admin:
 
 ### Set the Toaster Notification auto close duration 
 In your local copy of the `ToasterNotification.js` inside the ToasterNotification folder you downloaded from this repository , change the `TOASTER_AUTOCLOSE_TIMER` constant to 
-whatever value you prefer. In the sample code it is set to 20,000 milliseconds (20 seconds). The default if you do not sepecify the `autoClose` parameter when calling `finesse.containerservices.FinesseToaster.showToaster()` is 
+whatever value you prefer. In the sample code it is set to 15,000 milliseconds (15 seconds). The default if you do not sepecify the `autoClose` parameter when calling `finesse.containerservices.FinesseToaster.showToaster()` is 
 8 seconds. There are 3 locations in the code that use that constant so if you prefer to have different close durations for the different type of Toaster 
 notifications (line issues, Finesse Out of Service and Finesse back in Service) you can just set them explicitely by replacing `TOASTER_AUTOCLOSE_TIMER`  with your prefered value.  
 

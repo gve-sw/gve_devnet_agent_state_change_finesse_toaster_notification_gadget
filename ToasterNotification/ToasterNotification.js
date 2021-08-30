@@ -16,7 +16,7 @@ or implied.
 
 */
 
-const TOASTER_AUTOCLOSE_TIMER=20000 // this how long to show the toaster notification , in milliseconds
+const TOASTER_AUTOCLOSE_TIMER=15000 // this how long to show the toaster notification , in milliseconds
 
 var finesse = finesse || {};
 finesse.gadget = finesse.gadget || {};
@@ -45,7 +45,6 @@ finesse.modules.ToasterNotificationGadget = (function ($) {
             var theNotReadyReasonCode = user.getNotReadyReasonCodeId();
             var theToasterText='';
             if (theNotReadyReasonCode=='9' || theNotReadyReasonCode=='35') theToasterText='Your Extension is out of service : RC32759';
-            if (theNotReadyReasonCode=='11') theToasterText='Your Extension is out of service due to CUCM Failover : RC32757';
             if (theNotReadyReasonCode=='12' || theNotReadyReasonCode=='38') theToasterText='Your Extension is back in service. Please Go Ready : RC32756';
             if (theToasterText!='') {
                 clientLogs.log("=====Gadget.Log -> Attempting Toaster Notification =====");
@@ -57,7 +56,6 @@ finesse.modules.ToasterNotificationGadget = (function ($) {
                     }
                 );
             }
-            clientLogs.log("=====Gadget.Log -> Toaster Notification Not Required=====");
         }
     }; 
 
